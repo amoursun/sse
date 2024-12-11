@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <button id="connect-btn">Connect</button>
+    <button id="stop-btn">Stop</button>
+    <script>
+        let eventSource;
+        const connectBtn = document.getElementById('connect-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        connectBtn.addEventListener('click', () => {
+            eventSource = new EventSource(location.origin + '/sse');
+            eventSource.onopen = () => {
+                console.log('opened');
+            };
+            eventSource.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log(data);
+            };
+        });
+        stopBtn.addEventListener('click', () => {
+            eventSource.close();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "sse-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:express": "node server-express.js",
+    "server:http": "node server-http.js",
+    "server:koa": "node server-koa.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "http": "0.0.1-security",
+    "koa": "^2.14.1"
+  }
+}
